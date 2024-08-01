@@ -1,0 +1,11 @@
+<!-- <p>detallepais works!</p> -->
+<div *ngIf="pais">
+    <h2>Detalles del País</h2>
+    <div class="pais-detalle">
+        <p><strong>Nombre:</strong> {{nombre}}</p>
+        <p><strong>Capital:</strong> {{capital}}</p>
+        <p><strong>Continente:</strong> {{continente}}</p>
+        <p><strong>Población:</strong> {{population}}</p>
+        <img [src]="flag" alt="Bandera de {{nombre}}">
+    </div>
+</div>

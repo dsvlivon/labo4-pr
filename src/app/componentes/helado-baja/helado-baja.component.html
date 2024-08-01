@@ -1,0 +1,35 @@
+<!-- <p>helado-baja works!</p> -->
+<div class="login-background">
+    <div class="formulario">
+        BAJA DE HELADOS
+        <form [formGroup]="form" (ngSubmit)="onRegistrar()" class="login-form">
+            <!-- nombre para el sabor, un tipo (agua, crema), precio y un peso aproximado (entre 250 gramos y 1000 gramos) -->
+            <div class="mb-3">
+                <label class="form-label">Nombre: </label>
+                <input type="text" class="form-control" formControlName="nombre" [disabled]="true">
+            </div>
+
+            <div class="mb-3">
+                <label class="form-label">Tipo: </label>
+                <input type="text" class="form-control" formControlName="tipo" [disabled]="true">
+              </div>
+
+            <div class="mb-3">
+                <label class="form-label">Precio: </label>
+                <input type="number" class="form-control" formControlName="precio" min="1" max="10000" [disabled]="true">
+            </div>        
+
+            <div class="mb-3">
+                <label class="form-label">Peso (grs): </label>
+                <input type="number" class="form-control" formControlName="peso" min="250" max="1000" [disabled]="true">
+            </div>            
+        
+            <div style="margin-top: 20px;"></div> <!-- DIVIDER-->
+            <div style="align-items: center; display: flex;">
+                <input type="submit" value="Baja" class="btn-76">
+            </div>
+            
+        </form>
+    </div>
+    
+</div>

@@ -1,0 +1,30 @@
+<!-- <p>helado-tabla works!</p> -->
+<div class="table-container">
+    <table mat-table [dataSource]="lista" class="mat-elevation-z8">
+        <!-- ['nombre', 'tipo', 'precio', 'peso']; -->
+         <ng-container matColumnDef="nombre">
+            <th mat-header-cell *matHeaderCellDef> Nombre </th>
+            <td mat-cell *matCellDef="let obj"> {{obj.nombre}} </td>
+        </ng-container>
+
+        <ng-container matColumnDef="tipo">
+            <th mat-header-cell *matHeaderCellDef> Tipo </th>
+            <td mat-cell *matCellDef="let obj"> {{obj.tipo}} </td>
+        </ng-container>
+
+        <ng-container matColumnDef="precio">
+            <th mat-header-cell *matHeaderCellDef> Precio </th>
+            <td mat-cell *matCellDef="let obj"> {{obj.precio}} </td>
+        </ng-container>
+
+        <ng-container matColumnDef="peso">
+            <th mat-header-cell *matHeaderCellDef> Peso </th>
+            <td mat-cell *matCellDef="let obj"> {{obj.peso}} </td>
+        </ng-container>
+  
+        <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+        <tr mat-row *matRowDef="let obj; columns: displayedColumns;" (click)="emitirDetalles(obj)"></tr>
+    </table>
+</div>
+
+  

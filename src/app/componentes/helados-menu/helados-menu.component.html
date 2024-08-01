@@ -1,0 +1,36 @@
+<!-- <p>helados-menu works!</p> -->
+<mat-toolbar class="navbar">
+    <div class="izq">
+        <a (click)="goHome()"><img class="logo scale-up-center"
+                src="https://github.com/dsvlivon/imagenes/blob/main/DV_logo.png?raw=true" alt="Logo"></a>
+    </div>
+
+    <div
+        style="align-items: right; margin-left: 40%; margin-top:1%; display: flex; flex-direction: flex-end; font-style: italic; color: darkblue; font-size: medium;">
+        <p>Bienvenido {{ usuario.nombre }} | Rol: {{ usuario.rol }}</p>
+    </div>
+
+    <div class="der">
+        <ul class="nav-links">
+            <li><a (click)="goHome()" title="Home"><mat-icon>home</mat-icon></a></li>
+            <li><a (click)="goLogOut()" title="Salir"><mat-icon>open_in_new</mat-icon></a></li>
+        </ul>
+    </div>
+</mat-toolbar>
+
+<div class="contenedor2">
+    <div class="item-contenedor">
+        <div class="item-30">
+            <app-helado-alta (objSeleccionado)="manejarSeleccion($event)"></app-helado-alta>
+        </div>
+        <div class="item-30">
+            <app-helado-modificacion [obj]="objSeleccionado"></app-helado-modificacion>
+        </div>
+        <div class="item-30">
+            <app-helado-baja [obj]="objSeleccionado"></app-helado-baja>
+        </div>
+    </div>
+    <div class="item-100">
+        <app-helado-tabla (objSeleccionado)="manejarSeleccion($event)"></app-helado-tabla>
+    </div>
+</div>

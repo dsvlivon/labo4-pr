@@ -1,0 +1,31 @@
+<!-- <p>registro works!</p> -->
+<div class="login-background">
+    <div class= "formulario">
+        <img class="logo" src="https://github.com/dsvlivon/imagenes/blob/main/DV_logo.png?raw=true" alt="Logo">
+        
+        <h2>Registro de usuario</h2>
+        
+        <form [formGroup]="form" (ngSubmit)="onSubmit()" class="login-form">
+            <div class="mb-3">
+                <label class="form-label">Email: </label>
+                <input type="text" class="form-control" formControlName="email">
+            </div>
+            <div class="mb-3">
+                <label class="form-label">Clave: </label>
+                <input type="password" class="form-control" formControlName="clave">
+            </div>
+ 
+            <div style="margin-top: 20px;"></div>
+            <div style="align-items: center; display: flex;">
+                <input type="submit" value="Registrar" class="btn-76">
+            </div>
+        </form>
+
+        <div style="text-align: center;">
+            <p style="margin-top:20px; color: darkslategrey; text-shadow: 0 0 10px white;">{{mensaje}}</p>
+        </div>
+    </div>
+</div>
+
+
+

@@ -1,0 +1,265 @@
+.home-background {
+    background-image: url('https://github.com/dsvlivon/imagenes/blob/main/parciales/fondo-background-azul.jpg?raw=true');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    width: 100%;
+    min-height: 60vh;
+    display: flex;
+    flex-direction: column; /* Apila los elementos verticalmente */
+    padding-top: 80px; /* Espacio para la barra de navegación */
+    align-items: center; /* Centra los elementos horizontalmente */
+}
+
+ 
+.navbar {
+    background-color: cyan;
+    color: #fff;
+    padding: 10px 0;
+    height: 80px;
+    display: flex;
+    
+}
+
+.der {
+    display: flex;
+    justify-content:flex-end; 
+    align-items: center;
+    width: 100%;
+    margin: 0 auto;
+    padding: 20px;
+    
+}
+
+.izq {
+    display: flex;
+    justify-content:flex-start; 
+}
+
+.logo {
+    justify-content: flex-start; 
+    font-size: 24px;
+    height: 85px; 
+    width: auto;
+}
+
+.nav-links {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+.nav-links li {
+    display: inline;
+}
+
+.nav-links li a {
+    color: #08000e;
+    text-decoration: none;
+    padding: 10px 20px;
+    transition: background-color 0.3s ease;
+}
+
+.nav-links li a:hover {
+    background-color: magenta;
+    color: whitesmoke;
+}
+
+.content {
+    padding: 20px;
+}
+
+
+.mostrarSpinnner {
+    color: red;
+    
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 9999;
+  }
+  
+.scale-up-center {
+	-webkit-animation: scale-up-center 0.4s cubic-bezier(0.390, 0.575, 0.565, 1.000) both;
+	        animation: scale-up-center 0.4s cubic-bezier(0.390, 0.575, 0.565, 1.000) both;
+}
+
+ @-webkit-keyframes scale-up-center {
+    0% {
+      -webkit-transform: scale(0.5);
+              transform: scale(0.5);
+    }
+    100% {
+      -webkit-transform: scale(1);
+              transform: scale(1);
+    }
+  }
+  @keyframes scale-up-center {
+    0% {
+      -webkit-transform: scale(0.5);
+              transform: scale(0.5);
+    }
+    100% {
+      -webkit-transform: scale(1);
+              transform: scale(1);
+    }
+  }
+  
+
+.card {
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    padding: 16px;
+    width: 300px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.card-img-top {
+    width: 100%;
+    border-radius: 50%;
+}
+
+.card-body {
+    text-align: center;
+}
+
+.card-title {
+    margin: 8px 0;
+}
+
+.card-text {
+    margin: 4px 0;
+}
+
+:host {
+    display: block;
+    position: relative;
+    overflow: hidden;
+  }
+  
+  .router-container {
+    position: absolute;
+    width: 100%;
+    height: 80%;
+    overflow: hidden;
+  }
+  
+  .router-container.ng-enter,
+  .router-container.ng-leave {
+    transition: transform 1s cubic-bezier(0.25, 0.8, 0.25, 1), opacity 1s cubic-bezier(0.25, 0.8, 0.25, 1);
+    opacity: 0;
+  }
+  
+  .router-container.ng-enter {
+    transform: translateX(-100%);
+  }
+  
+  .router-container.ng-enter-active,
+  .router-container.ng-leave-active {
+    transform: translateX(0);
+    opacity: 1;
+  }
+  
+  
+.card-container {
+  display: flex;
+  width: 100%;
+  height: 75vh;
+  display: flex;
+
+  flex-wrap: wrap;
+  gap: 16px; /* Espacio entre las tarjetas */
+  justify-content: center; /* Centrar las tarjetas horizontalmente */
+  padding: 20px;
+}
+
+/* Configura cada tarjeta para que ocupe el 50% del ancho y el 100% del alto */
+.card {
+  flex: 1;
+  margin: 10px; /* Opcional: agrega márgenes entre las tarjetas */
+  display: flex;
+  flex-direction: column;
+}
+
+.mat-card {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between; /* Para alinear el contenido dentro de la tarjeta */
+}
+
+/* Opcional: estilos adicionales para el resto de la interfaz */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.nav-links {
+  display: flex;
+  list-style: none;
+}
+
+.nav-links li {
+  margin-right: 20px;
+}
+
+.logo {
+  height: 50px;
+}
+
+
+.contenedor {
+  display: flex;
+  height: 100vh;
+}
+
+.item {
+  flex: 1;
+  box-sizing: border-box;
+  padding: 10px;
+}
+
+.item-100 {
+  flex: 1 1 100%;
+  box-sizing: border-box;
+  padding: 10px;
+  width: 100%;
+}
+
+.item app-alta,
+.item app-tabla {
+  width: 100%;
+  height: 100%;
+}
+
+
+/* repa detalle */
+.contenedor2 {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 100%;
+}
+
+.item-100 {
+  flex: 1;
+  width: 100%;
+  box-sizing: border-box;
+  padding: 10px;
+}
+
+.item-contenedor {
+  display: flex;
+  width: 100%;
+  height: 100%;
+}
+
+.item-50 {
+  flex: 1;
+  width: 50%;
+  box-sizing: border-box;
+  padding: 10px;
+}

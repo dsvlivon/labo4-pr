@@ -1,0 +1,65 @@
+<div class="login-background">
+    <div class= "formulario">
+        <!-- <img class="logo" src="../../../../assets/DV_logo.png" alt="Logo"> -->
+        <img class="logo" src="https://github.com/dsvlivon/imagenes/blob/main/DV_logo.png?raw=true" alt="Logo">
+        <h2 *ngIf="mostrarLogin">Login de usuario</h2>
+        <h2 *ngIf="mostrarRegistro">Registro de usuario</h2>
+        <form [formGroup]="formLogin" (ngSubmit)="onSubmit()" class="login-form" *ngIf="mostrarLogin">
+            <div class="mb-3">
+                <label class="form-label">Email: </label>
+                <input type="text" class="form-control" formControlName="email">
+            </div>
+            <div class="mb-3">
+                <label class="form-label">Clave: </label>
+                <input type="password" class="form-control" formControlName="clave">
+            </div>
+            <!-- <div style="align-items: center; display: flex;">
+                <a href="#" (click)="yaEsUsuario()" style="color: white; width: 100%;" class="link" *ngIf="mostrarLogin">¿No tienes una cuenta? ¡Regístrate aquí!</a>
+            </div> -->
+            <div style="margin-top: 20px;"></div>
+            <div style="align-items: center; display: flex;">
+                <input type="submit" value="Ingresar" class="btn-76">
+            </div>
+            
+        </form>
+        <div class="button-container" *ngIf="mostrarLogin">
+            <button class="btn login-btn" (click)="onCheckboxChange()">Acceso Admin</button>
+            <button class="btn register-btn "(click)="onCheckboxChange2()">Acceso Empleado</button>    
+            <!-- <mat-checkbox class="example-margin" style="color: white;" [(ngModel)]="checked" (change)="onCheckboxChange()">Acceso Admin</mat-checkbox>
+            <mat-checkbox class="example-margin" style="color: white;" [(ngModel)]="checked2" (change)="onCheckboxChange2()">Acceso Empleado</mat-checkbox> -->
+        </div>
+
+        <div class="button-container">
+            <button class="btn btn-google" style="margin-top: 20px;" (click)="onGoogleLogin()" >Login With Google</button>
+        </div>
+
+        <!-- //////////////////////////////////////////////////////////////////////////////////////////////// -->
+        <form [formGroup]="formLogin" (ngSubmit)="onRegistrar()" class="login-form" *ngIf="mostrarRegistro">
+            <div class="mb-3">
+                <label class="form-label">Email: </label>
+                <input type="text" class="form-control" formControlName="email">
+            </div>
+            <div class="mb-3">
+                <label class="form-label">Clave: </label>
+                <input type="password" class="form-control" formControlName="clave">
+            </div>
+            <select class="form-control" formControlName="rol">
+                <option *ngFor="let rol of tiposRol" [value]="rol">{{ rol }}</option>
+              </select>
+            <!-- <div style="align-items: center; display: flex;">
+                <a href="#" (click)="yaEsUsuario()" style="color: white; width: 100%;" class="link" *ngIf="mostrarRegistro">¿Ya tienes una cuenta? ¡Inicia sesión aquí!</a>
+            </div> -->
+            <div style="margin-top: 20px;"></div>
+            <div style="align-items: center; display: flex;">
+                <input type="submit" value="Registrar" class="btn-76">
+            </div>
+            
+        </form>
+
+        <div *ngIf="mostrarMensaje" style="text-align: center;">
+            <p style="margin-top:20px; color: darkslategrey; text-shadow: 0 0 10px white;">{{mensaje}}</p>
+        </div>
+    </div>
+</div>
+
+

@@ -1,0 +1,15 @@
+.pais-detalle {
+    border: 1px solid #ddd;
+    padding: 10px;
+    border-radius: 5px;
+    background-color: #f9f9f9;
+}
+
+.pais-detalle p {
+    margin: 5px 0;
+}
+
+.pais-detalle img {
+    max-width: 100px;
+    margin-top: 10px;
+}

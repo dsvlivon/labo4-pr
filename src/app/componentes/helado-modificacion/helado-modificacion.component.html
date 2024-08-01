@@ -1,0 +1,47 @@
+<!-- <p>helado-modificacion works!</p> -->
+<div class="login-background">
+    <div class="formulario">
+        MODIFICACION DE HELADOS
+        <form [formGroup]="form" (ngSubmit)="onRegistrar()" class="login-form">
+            <!-- nombre para el sabor, un tipo (agua, crema), precio y un peso aproximado (entre 250 gramos y 1000 gramos) -->
+            <div class="mb-3">
+                <label class="form-label">Nombre: </label>
+                <input type="text" class="form-control" formControlName="nombre" [disabled]="true">
+            </div>
+
+            <div class="mb-3">
+                <label class="form-label">Tipo: </label>
+                <select class="form-control" formControlName="tipo">
+                  <option *ngFor="let tipo of tipos" [value]="tipo">{{ tipo }}</option>
+                </select>
+              </div>
+
+            <div class="mb-3">
+                <label class="form-label">Precio: </label>
+                <input type="number" class="form-control" formControlName="precio" min="1" max="10000">
+                <div *ngIf="Precio?.invalid && (Precio?.dirty || Precio?.touched)" class="text-danger">
+                    <div *ngIf="Precio?.errors?.['required']">El Precio es requerida.</div>
+                    <div *ngIf="Precio?.errors?.['min']">El Precio mínima es 1.</div>
+                    <div *ngIf="Precio?.errors?.['max']">El Precio máxima es 10000.</div>
+                </div>
+            </div>        
+
+            <div class="mb-3">
+                <label class="form-label">Peso (grs): </label>
+                <input type="number" class="form-control" formControlName="peso" min="250" max="1000">
+                <div *ngIf="Peso?.invalid && (Peso?.dirty || Peso?.touched)" class="text-danger">
+                    <div *ngIf="Peso?.errors?.['required']">El Peso es requerida.</div>
+                    <div *ngIf="Peso?.errors?.['min']">El Peso mínima es 250.</div>
+                    <div *ngIf="Peso?.errors?.['max']">El Peso máxima es 1000.</div>
+                </div>
+            </div>            
+        
+            <div style="margin-top: 20px;"></div> <!-- DIVIDER-->
+            <div style="align-items: center; display: flex;">
+                <input type="submit" value="Modificar" class="btn-76">
+            </div>
+            
+        </form>
+    </div>
+    
+</div>

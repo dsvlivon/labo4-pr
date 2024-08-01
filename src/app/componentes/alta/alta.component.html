@@ -1,0 +1,76 @@
+<!-- <p>alta works!</p> -->
+<div class="login-background">
+    <div class="formulario">
+        
+        <form [formGroup]="formRegistro" (ngSubmit)="onRegistrar()" class="login-form">
+            
+            <div class="mb-3">
+                <label class="form-label">Nombre: </label>
+                <input type="text" class="form-control" formControlName="nombre">
+            </div>
+            <div class="mb-3">
+                <label class="form-label">Edad: </label>
+                <input type="number" class="form-control" formControlName="edad" min="18" max="100">
+                <div *ngIf="Edad?.invalid && (Edad?.dirty || Edad?.touched)" class="text-danger">
+                    <div *ngIf="Edad?.errors?.['required']">La edad es requerida.</div>
+                    <div *ngIf="Edad?.errors?.['min']">La edad mínima es 18.</div>
+                    <div *ngIf="Edad?.errors?.['max']">La edad máxima es 100.</div>
+                </div>
+            </div>            
+            <div class="mb-3">
+                <label class="form-label">DNI: </label>
+                <input type="number" class="form-control" formControlName="dni" pattern="^[0-9]{7,8}$">
+                <div *ngIf="Dni?.invalid && (Dni?.dirty || Dni?.touched)" class="text-danger">
+                    <div *ngIf="Dni?.errors?.['required']">El DNI es requerido.</div>
+                    <div *ngIf="Dni?.errors?.['pattern']">El DNI debe ser un número de 7 a 8 dígitos.</div>
+                </div>
+            </div>
+            
+            <!-- dni , nombre, edad, capacidad de transporte(unidades de potes de helados), país de origen,unidad Propia (true o false)) -->
+            <div class="mb-3">
+                <label class="form-label">Capacidad de Transporte: </label>
+                <input type="number" class="form-control" formControlName="capacidad" min="1" max="12">
+                <div *ngIf="Capacidad?.invalid && (Capacidad?.dirty || Capacidad?.touched)" class="text-danger">
+                    <div *ngIf="Capacidad?.errors?.['required']">La cap. es requerida.</div>
+                    <div *ngIf="Capacidad?.errors?.['min']">La cap. mínima es 1.</div>
+                    <div *ngIf="Capacidad?.errors?.['max']">La cap. máxima es 12.</div>
+                </div>
+            </div>
+
+            <div class="mb-3">
+                <label class="form-label">Pais: </label>
+                <input type="text" class="form-control" formControlName="pais">
+            </div>
+                
+            <div class="mb-3">
+                <label class="form-label">Unidad Propia: </label>
+                <input type="checkbox" class="form-control" formControlName="unidadPropia">
+            </div>            
+                    
+            <div class="mb-3">
+                <label class="form-label">Email: </label>
+                <input type="text" class="form-control" formControlName="email">
+                <div *ngIf="Email?.invalid && (Email?.dirty || Email?.touched)" class="text-danger">
+                    <div *ngIf="Email?.errors?.['required']">El email es requerido.</div>
+                    <div *ngIf="Email?.errors?.['email']">El formato del email no es válido.</div>
+                </div>
+            </div>
+            <div class="mb-3">
+                <label class="form-label">Clave: </label>
+                <input type="password" class="form-control" formControlName="clave">
+            </div>
+
+            <div style="margin-top: 20px;"></div> <!-- DIVIDER-->
+            <div style="align-items: center; display: flex;">
+                <input type="submit" value="Registrar" class="btn-76">
+            </div>
+            
+        </form>
+
+        <!-- <div>
+            <input type="file" (change)="onFileChange($event)">
+        </div> -->
+
+    </div>
+    
+</div>

@@ -1,0 +1,23 @@
+<!-- <p>tabla works!</p> -->
+<div class="table-container">
+    <table mat-table [dataSource]="paises" class="mat-elevation-z8">
+        <!-- Pic Column -->
+        <ng-container matColumnDef="bandera">
+            <th mat-header-cell *matHeaderCellDef> Bandera </th>
+            <td mat-cell *matCellDef="let obj"> 
+                <img [src]="obj.flags.svg" alt="{{obj.flags.png}} Flag" class="obj-pic">
+            </td>
+        </ng-container>
+
+         <!-- Pais Col -->
+         <ng-container matColumnDef="pais">
+            <th mat-header-cell *matHeaderCellDef> Pais </th>
+            <td mat-cell *matCellDef="let obj"> {{obj.name.common}} </td>
+        </ng-container>
+  
+        <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+        <tr mat-row *matRowDef="let obj; columns: displayedColumns;" (click)="emitirDetalles(obj)"></tr>
+    </table>
+</div>
+
+  

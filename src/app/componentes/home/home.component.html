@@ -1,0 +1,66 @@
+<!-- <p>home workssss!</p> -->
+<mat-toolbar class="navbar">
+    <div class="izq">
+        <a (click)="goHome()"><img class="logo scale-up-center"
+                src="https://github.com/dsvlivon/imagenes/blob/main/DV_logo.png?raw=true" alt="Logo"></a>
+    </div>
+
+    <div
+        style="align-items: right; margin-left: 40%; margin-top:1%; display: flex; flex-direction: flex-end; font-style: italic; color: darkblue; font-size: medium;">
+        <p>Bienvenido {{ nombre }} | Rol: {{ rol }}</p>
+    </div>
+
+    <div class="der">
+        <ul class="nav-links">
+            <li><a (click)="goHome()" title="Home"><mat-icon>home</mat-icon></a></li>
+            <li><a (click)="goLogOut()" title="Salir"><mat-icon>open_in_new</mat-icon></a></li>
+        </ul>
+    </div>
+</mat-toolbar>
+
+<div class="card-container" *ngIf="mostrarCards">
+    <mat-card class="card" (click)="goAltas()"> 
+        <mat-card-header>
+            <mat-card-title>ALTAS</mat-card-title>
+        </mat-card-header>
+        <img mat-card-image src="https://github.com/dsvlivon/imagenes/blob/main/parciales/ADD.png?raw=true " alt="Altas">
+
+    </mat-card>
+
+    <mat-card class="card" (click)="goRepartidorDetalle()">
+        <mat-card-header>
+            <mat-card-title>REPARTIDOR DETALLE</mat-card-title>
+        </mat-card-header>
+        <img mat-card-image src="https://github.com/dsvlivon/imagenes/blob/main/parciales/DETAIL.png?raw=true" alt="Repartidor Detalle">
+    </mat-card>
+
+    <mat-card class="card" (click)="goHeladosMenu()" *ngIf="mostrarHelados">
+        <mat-card-header>
+            <mat-card-title>SALEN HELADOS</mat-card-title>
+        </mat-card-header>
+        <img mat-card-image src="https://github.com/dsvlivon/imagenes/blob/main/parciales/ICE.png?raw=true" alt="Salen Helados">
+    </mat-card>
+</div>
+
+<div *ngIf="mostrarAlta" class="contenedor">
+    <div class="item">
+        <app-alta [pais]="objSeleccionado"></app-alta>
+    </div>
+    <div class="item">
+        <app-tabla (objSeleccionado)="manejarSeleccion($event)"></app-tabla>
+    </div>
+</div>
+
+<div *ngIf="mostrarRepartidorDetalle" class="contenedor2">
+    <div class="item-100">
+        <app-repartidores (objSeleccionado)="manejarSeleccion($event)"></app-repartidores>
+    </div>
+    <div class="item-contenedor">
+        <div class="item-50">
+            <app-detalle [repa]="objSeleccionado"></app-detalle>
+        </div>
+        <div class="item-50">
+            <app-detallepais [repa]="objSeleccionado"></app-detallepais>
+        </div>
+    </div>
+</div>
