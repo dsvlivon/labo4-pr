@@ -2,6 +2,7 @@ import { CommonModule } from '@angular/common';
 import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 import { MatTableModule } from '@angular/material/table';
 import { FirebaseService } from '../../services/firestore.service';
+import { PdfService } from '../../services/pdf.service';
 
 @Component({
   selector: 'app-helado-tabla',
@@ -16,8 +17,12 @@ export class HeladoTablaComponent implements OnInit{
   lista: string[] = [];
   displayedColumns: string[] = ['nombre', 'tipo', 'precio', 'peso'];
   dataSource: any[] = [];
-  
-  constructor( private fireStore: FirebaseService ){  }
+
+
+  constructor( 
+    private fireStore: FirebaseService,
+    private pdfService: PdfService
+  ){  }
 
   ngOnInit(): void {
     this.fireStore.obtenerDato('helados').subscribe(
@@ -29,6 +34,10 @@ export class HeladoTablaComponent implements OnInit{
   emitirDetalles(pais: any) {
     console.log("seleccionado: ", pais);
     this.objSeleccionado.emit(pais);
+  }
+
+  pdf(): void {
+    this.pdfService.exportarPDf(this.lista, 'Lista de Helados');
   }
 
 }

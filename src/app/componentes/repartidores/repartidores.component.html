@@ -31,5 +31,7 @@
         <tr mat-row *matRowDef="let obj; columns: displayedColumns;" (click)="emitirDetalles(obj)"></tr>
     </table>
 </div>
-
+<div *ngIf="mostrarBoton">
+    <button (click)="excel()" class="xls-btn">Exportar Excel</button>
+</div>
 <!-- ['nombre', 'pais', 'capacidad', 'edad', 'unidadPropia'] -->
